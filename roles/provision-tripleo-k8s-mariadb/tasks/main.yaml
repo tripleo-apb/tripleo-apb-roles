@@ -1,0 +1,61 @@
+- name: Create project
+  k8s_v1_namespace:
+    host: "{{coe_host}}"
+    context: "{{kube_context}}"
+    kubeconfig: "{{config_file}}"
+    name: openstack
+    state: present
+    debug: yes
+  register: create_project
+
+- debug: var=create_project
+
+- name: Create mariadb service 
+  k8s_v1_service:
+    host: "{{coe_host}}"
+    context: "{{kube_context}}"
+    kubeconfig: "{{config_file}}"
+    name: mariadb
+    namespace: openstack 
+    state: present
+    ports:
+      - port: 3306 
+        name: db
+    selector:
+      app: mariadb 
+    labels:
+      app: mariadb 
+    debug: yes
+    annotations:
+      service.alpha.kubernetes.io/tolerate-unready-endpoints: "false"
+  register: create_service 
+
+- debug: var=create_service
+
+- name: Create mariadb deployment 
+  k8s_v1beta1_stateful_set:
+    host: "{{coe_host}}"
+    context: "{{kube_context}}"
+    kubeconfig: "{{config_file}}"
+    name: mariadb
+    namespace: openstack 
+    state: present 
+    debug: yes
+    spec_service_name: mariadb
+    spec_template_metadata_name: mariadb
+    spec_template_metadata_labels:
+      app: mariadb 
+      galera: enabled
+    containers:
+      - name: mariadb 
+        image: quay.io/stackanetes/stackanetes-mariadb:newton
+        ports:
+        - container_port: 3306 
+        - container_port: 4567 
+        - container_port: 4444
+    replicas: 1
+  register: create_deployment
+  tags:
+    - statefulset
+
+- debug: var=create_deployment

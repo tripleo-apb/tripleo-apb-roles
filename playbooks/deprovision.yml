@@ -1,0 +1,9 @@
+- name: tripleo-k8s-mariadb playbook to deprovision the application
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  roles:
+    - role: ansible.kubernetes-modules
+      install_python_requirements: no
+    - role: deprovision-tripleo-k8s-mariadb
+      playbook_debug: false

@@ -1,0 +1,7 @@
+- name: tripleo-k8s-mariadb playbook to unbind the application
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  roles:
+  - role: unbind-tripleo-k8s-mariadb
+    playbook_debug: false
