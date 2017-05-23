@@ -1,0 +1,7 @@
+- name: keystone-apb playbook to bind the application
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  roles:
+  - role: bind-keystone-apb
+    playbook_debug: false
