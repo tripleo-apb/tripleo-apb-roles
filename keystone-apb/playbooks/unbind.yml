@@ -1,7 +1,0 @@
-- name: keystone-apb playbook to unbind the application
-  hosts: localhost
-  gather_facts: false
-  connection: local
-  roles:
-  - role: unbind-keystone-apb
-    playbook_debug: false
