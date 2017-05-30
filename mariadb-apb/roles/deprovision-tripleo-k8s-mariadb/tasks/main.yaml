@@ -14,11 +14,12 @@
     kubeconfig: "{{config_file}}"
     name: mariadb
     namespace: openstack 
+    state: absent 
 
-- name: Delete project
+- name: Delete mariadb configmap 
   k8s_v1_namespace:
     host: "{{coe_host}}"
     context: "{{kube_context}}"
     kubeconfig: "{{config_file}}"
-    name: openstack 
+    name: mariadb
     state: absent
