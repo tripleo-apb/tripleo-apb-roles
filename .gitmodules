@@ -1,6 +1,3 @@
 [submodule "oslo-config-ansible"]
 	path = oslo-config-ansible
 	url = https://github.com/dhellmann/oslo-config-ansible.git
-[submodule "keystone-roles"]
-	path = keystone-apb/roles
-	url = git@github.com:tripleo-apb/keystone-k8s-ansible.git
