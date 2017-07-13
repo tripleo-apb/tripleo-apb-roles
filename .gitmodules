@@ -3,4 +3,4 @@
 	url = https://github.com/dhellmann/oslo-config-ansible.git
 [submodule "keystone-roles"]
 	path = keystone-apb/roles
-	url = git@github.com:flaper87/keystone-k8s-ansible.git
+	url = git@github.com:tripleo-apb/keystone-k8s-ansible.git
