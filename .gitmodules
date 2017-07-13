@@ -4,3 +4,6 @@
 [submodule "oslo-config"]
 	path = oslo-apb/roles/oslo-config
 	url = https://github.com/tripleo-apb/ansible-role-oslo-config.git
+[submodule "k8s-mariadb"]
+	path = mariadb-apb/roles/k8s-mariadb
+	url = https://github.com/tripleo-apb/ansible-role-k8s-mariadb.git
