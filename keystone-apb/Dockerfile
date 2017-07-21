@@ -10,7 +10,8 @@ Yzogb3B0aW9uYWwKcGFyYW1ldGVyczogW10K"
 
 RUN mkdir /opt/ansible/roles/
 COPY playbooks/ /opt/apb/actions/
-RUN git clone https://github.com/flaper87/oslo-config-ansible /tmp/oslo-config-ansible && cp -r /tmp/oslo-config-ansible/roles/* /opt/ansible/roles/ && rm -Rf /tmp/oslo-config-ansible
+RUN git clone https://github.com/openstack/openstack-ansible-plugins /opt/ansible/roles/openstack-ansible-plugins
 RUN cd /opt/ansible/roles/ && git clone https://github.com/tripleo-apb/ansible-role-k8s-tripleo
+RUN ln -s /opt/ansible/roles/openstack-ansible-plugins /opt/apb/.ansible/plugins
 COPY roles /opt/ansible/roles/
 USER apb
