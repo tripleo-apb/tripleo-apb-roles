@@ -1,4 +1,4 @@
-- name: Provision mariadb
+- name: Generate Oslo Config
   hosts: localhost
   gather_facts: false
   connection: local
@@ -7,5 +7,4 @@
     - role: ansible.kubernetes-modules
       install_python_requirements: no
 
-    - role: k8s-mariadb
-      playbook_debug: false
+    - role: oslo-config

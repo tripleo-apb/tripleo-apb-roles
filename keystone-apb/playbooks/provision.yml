@@ -2,9 +2,12 @@
   hosts: localhost
   gather_facts: false
   connection: local
+
   roles:
-  - role: ansible.kubernetes-modules
-    install_python_requirements: no
-  - role: openstack-ansible-plugins
-  - role: provision-keystone-apb
-    playbook_debug: false
+    - role: ansible.kubernetes-modules
+      install_python_requirements: no
+
+    - openstack-ansible-plugins
+
+    - role: k8s-keystone
+      playbook_debug: false
