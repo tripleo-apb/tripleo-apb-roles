@@ -10,8 +10,12 @@ YmxlOiBUcnVlCmFzeW5jOiBvcHRpb25hbApwYXJhbWV0ZXJzOiBbXQo="
 
 RUN mkdir /opt/ansible/roles/
 COPY playbooks /opt/apb/actions
-RUN git clone https://github.com/openstack/openstack-ansible-plugins /opt/ansible/roles/openstack-ansible-plugins
-RUN cd /opt/ansible/roles/ && git clone https://github.com/tripleo-apb/ansible-role-k8s-tripleo
-RUN ln -s /opt/ansible/roles/openstack-ansible-plugins /opt/apb/.ansible/plugins
-COPY roles /opt/ansible/roles
+RUN cd /tmp && \
+    git clone https://github.com/openstack/openstack-ansible-plugins && \
+    mv openstack-ansible-plugins /etc/ansible/roles && \
+    ln -s /etc/ansible/roles/openstack-ansible-plugins /opt/apb/.ansible/plugins
+RUN cd /tmp && \
+    git clone https://github.com/tripleo-apb/ansible-role-k8s-tripleo && \
+    mv ansible-role-k8s-tripleo /etc/ansible/roles
+COPY ./roles/k8s-mariadb /opt/ansible/roles/k8s-mariadb
 USER apb
