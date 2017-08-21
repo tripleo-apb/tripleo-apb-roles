@@ -10,3 +10,6 @@
 [submodule "qdrouterd-apb/roles/k8s-qdrouterd"]
 	path = qdrouterd-apb/roles/k8s-qdrouterd
 	url = https://github.com/tripleo-apb/ansible-role-k8s-qdrouterd
+[submodule "glance-apb/roles/k8s-glance"]
+	path = glance-apb/roles/k8s-glance
+	url = https://github.com/tripleo-apb/ansible-role-k8s-glance
