@@ -7,3 +7,6 @@
 [submodule "k8s-mariadb"]
 	path = mariadb-apb/roles/k8s-mariadb
 	url = https://github.com/tripleo-apb/ansible-role-k8s-mariadb.git
+[submodule "qdrouterd-apb/roles/k8s-qdrouterd"]
+	path = qdrouterd-apb/roles/k8s-qdrouterd
+	url = https://github.com/tripleo-apb/ansible-role-k8s-qdrouterd
