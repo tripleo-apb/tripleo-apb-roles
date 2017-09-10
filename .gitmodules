@@ -13,3 +13,6 @@
 [submodule "glance-apb/roles/k8s-glance"]
 	path = glance-apb/roles/k8s-glance
 	url = https://github.com/tripleo-apb/ansible-role-k8s-glance
+[submodule "rabbitmq-apb/roles/k8s-rabbitmq"]
+	path = rabbitmq-apb/roles/k8s-rabbitmq
+	url = https://github.com/tripleo-apb/ansible-role-k8s-rabbitmq
