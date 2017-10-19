@@ -1,0 +1,15 @@
+- name: cinder-apb playbook to deprovision the application
+  hosts: localhost
+  gather_facts: false
+  connection: local
+
+  vars:
+    action: deprovision
+  roles:
+  - role: ansible.kubernetes-modules
+    install_python_requirements: no
+
+  - openstack-ansible-plugins
+
+  - role: ansible-role-k8s-cinder
+    playbook_debug: false

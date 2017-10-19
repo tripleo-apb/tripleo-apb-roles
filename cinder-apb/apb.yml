@@ -1,0 +1,13 @@
+name: cinder-apb
+image: tripleo/cinder-apb
+description: OpenStack Cinder
+bindable: False
+async: optional
+metadata:
+  displayName: cinder
+plans:
+  - name: default
+    description: This default plan deploys cinder-apb
+    free: True
+    metadata: {}
+    parameters: []

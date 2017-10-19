@@ -1,0 +1,20 @@
+- name: cinder-apb playbook to provision the application
+  hosts: localhost
+  gather_facts: false
+  connection: local
+
+  vars:
+    action: provision
+    namespace: openstack
+    kube_context: openstack/kt-c7kb7.cloud.lab.eng.bos.redhat.com:8443/kiran
+    coe_host: https://kt-c7kb7.cloud.lab.eng.bos.redhat.com:8443
+    service_account: openstack
+
+  roles:
+  - role: ansible.kubernetes-modules
+    install_python_requirements: no
+
+  - openstack-ansible-plugins
+
+  - role: ansible-role-k8s-cinder
+    playbook_debug: false
