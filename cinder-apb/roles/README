@@ -1,0 +1,3 @@
+Fetch Cinder k8s role into this directory before using the APB.
+
+git clone https://github.com/tripleo-apb/ansible-role-k8s-cinder.git
