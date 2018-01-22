@@ -16,5 +16,5 @@
 
   - openstack-ansible-plugins
 
-  - role: ansible-role-k8s-cinder
+  - role: k8s-cinder
     playbook_debug: false
