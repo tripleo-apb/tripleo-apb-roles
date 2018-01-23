@@ -18,4 +18,5 @@ RUN cd /tmp && \
     git clone https://github.com/tripleo-apb/ansible-role-k8s-tripleo && \
     mv ansible-role-k8s-tripleo /etc/ansible/roles
 COPY ./roles/k8s-rabbitmq /opt/ansible/roles/k8s-rabbitmq
+RUN chmod -R g=u /opt/{ansible,apb}
 USER apb
